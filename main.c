@@ -342,4 +342,89 @@ void restaurant_initialize()
     m[3].third = 60;
     m[4].fourth=50;
 }
+void search_by_restaurants()
+{
+    restaurant_initialize();
+    printf(""
+           "\n\nPlease Choose the restaurants\n\n1) %s\n2) %s\n3) %s",m[1].restaurant,m[2].restaurant, m[3].restaurant);
+    printf("\n4) Exit\n\nPlease ");
+    printf("select the restaurant\t");
+    scanf("%d", &restaurant_choice);
+    if (restaurant_choice > 4)
+    {
+        printf("Please Enter the valid choice \n\n");
+        search_by_restaurants();
+    }
+    else if (restaurant_choice == 4)
+        return;
+    else
+        restaurants(restaurant_choice);
+}
 
+
+void restaurants(int restaurant_choice)
+{
+    total = 0;
+    while (1)
+    {
+
+        printf("\n\nList of foods available");
+
+        printf("in %s\n\n1) %s\tTK: %d\n2)",
+               m[restaurant_choice].restaurant,
+               m[restaurant_choice].first_food,
+               m[restaurant_choice].first);
+
+        printf("%s\tTK: %d\n3) %s\tTK: %d\n4)",
+               m[restaurant_choice].second_food,
+               m[restaurant_choice].second,
+               m[restaurant_choice].third_food,
+               m[restaurant_choice].third);
+
+        printf("Cart\n5) Exit\n\nPlease Enter");
+        printf("Your Choice\t");
+        scanf("%d", &food_choice);
+
+
+        if (food_choice == 1)
+        {
+            printf("Please Enter the ");
+            printf("Count of %s\t",
+                   m[restaurant_choice].first_food);
+            scanf("%d", &n);
+            total = total
+                    + (n * m[restaurant_choice].first);
+        }
+        else if (food_choice == 2)
+        {
+            printf("Please Enter the Count");
+            printf("of %s\t",
+                   m[restaurant_choice].second_food);
+            scanf("%d", &n);
+            total = total
+                    + (n * m[restaurant_choice].second);
+        }
+        else if (food_choice == 3)
+        {
+            printf("Please Enter the Count");
+            printf("of %s\t",m[restaurant_choice].third_food);
+            scanf("%d", &n);
+            total = total
+                    + (n * m[restaurant_choice].third);
+        }
+
+
+        else if (food_choice == 4)
+        {
+            cart();
+        }
+        else if (food_choice == 5)
+        {
+            search_by_restaurants();
+        }
+        else
+        {
+            printf("Please Enter the valid choice\n\n");
+        }
+    }
+}
