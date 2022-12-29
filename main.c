@@ -310,4 +310,36 @@ void login()
         }
     }
 }
+void restaurant_initialize()
+{
+    strcpy(m[1].restaurant, "Khana's");
+    strcpy(m[1].first_food, "Sandwich");
+    strcpy(m[1].second_food, "Chicken Wings");
+    strcpy(m[1].third_food, "pizza");
+    m[1].first = 150;
+    m[1].second = 100;
+    m[1].third = 95;
+
+
+    strcpy(m[2].restaurant, "KFC");
+    strcpy(m[2].first_food, "Burger");
+    strcpy(m[2].second_food, "French Fry");
+    strcpy(m[2].third_food, "Fried Chicken");
+    strcpy(m[2].fourth_food,"Drinks");
+    m[2].first = 200;
+    m[2].second = 75;
+    m[2].third = 110;
+    m[2].fourth=50;
+
+
+    strcpy(m[3].restaurant, "Kacchi Bhai");
+    strcpy(m[3].first_food, "Chicken_Biriyani");
+    strcpy(m[3].second_food, "Mutton Biriyani");
+    strcpy(m[3].third_food, "Borhani");
+    strcpy(m[3].fourth_food,"Drinks");
+    m[3].first = 250;
+    m[3].second = 280;
+    m[3].third = 60;
+    m[4].fourth=50;
+}
 
