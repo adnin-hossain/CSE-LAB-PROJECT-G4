@@ -242,3 +242,72 @@ void account_check()
     }
 }
 
+void login()
+{
+    printf("\n\n**************Welcome to Login page ****************\n\n");
+
+    printf("\tEnter Your Email: ");
+    scanf("%s", temp_email);
+    printf("\tEnter Your Password: ");
+    scanf("%s", temp_password1);
+    for (i = 0; i < 100; i++)
+    {
+
+        if (!strcmp(s[i].email, temp_email))
+        {
+
+            if (!strcmp(s[i].password, temp_password1))
+            {
+                printf("\n\nWelcome %s, ", s[i].name);
+                printf("Your are successfully ");
+                printf("logged in\n\n ");
+                printf("We Provide two ways of search\n ");
+                printf("1) Search By Restaurants\n ");
+                printf("2) Search by Food\n ");
+                printf("3)Exit\n\n");
+                printf("Please Enter your choice:");
+                scanf("%d", &search_choice);
+
+
+                switch (search_choice)
+                {
+                case 1:
+                {
+                    search_by_restaurants();
+                    break;
+                }
+                case 2:
+                {
+                    search_by_food();
+                    break;
+                }
+                case 3:
+                {
+                    main();
+                    return;
+                }
+                default:
+                {
+                    printf("Please Enter the valid choice\n\n ");
+                    break;
+                }
+                }
+                break;
+            }
+            else
+            {
+                printf("\n\nInvalid Password! ");
+                printf("Please Enter the correct password\n\n");
+                main();
+                break;
+            }
+        }
+        else
+        {
+            printf("\n\nAccount doesn't exist,Please signup!!\n\n ");
+            main();
+            break;
+        }
+    }
+}
+
