@@ -503,3 +503,43 @@ void food_order(int food)
     }
 }
 
+void cart()
+{
+    printf("\n\n\n\n*************check your Cart***************");
+    printf("\nYour Total Order");
+    printf("Amount is: %d\n", total);
+    printf("\n\nDo You want to confirm your order (y=1/n=0):");
+
+    scanf("%d", &ch);
+
+    if (ch == 1) {
+
+        printf("\n\nThank You for your order");
+
+           printf("Your Food is on the way.");
+        printf("Welcome again!!\n\n");
+        return;
+    }
+    else if (ch == 0) {
+        printf("Do You want to exit =-1");
+        printf("or Go back =0");
+        scanf("%d", &confirm);
+        if (confirm == 1) {
+            printf("\n\nOops! Your order is");
+            printf("cancelled!! Exiting..");
+            printf("Thank You visit again!\n");
+            return;
+        }
+        else {
+            printf("\n\nThank You\n\n");
+            login();
+        }
+    }
+    else {
+        printf("\n\nPlease Enter the ");
+        printf("correct choice\n\n");
+        cart();
+    }
+}
+
+
