@@ -218,3 +218,27 @@ int validate()
     }
 }
 
+void account_check()
+{
+    for (i = 0; i < 100; i++) {
+
+        if (!(strcmp(temp_email, s[i].email)
+              && strcmp(temp_password1,
+                        s[i].password))) {
+            printf("\n\nAccount Already Existed. Please Login !!\n\n");
+            main();
+            break;
+        }
+    }
+
+    if (i == 100) {
+        strcpy(s[j].name, temp_name);
+        s[j].age = temp_age;
+        strcpy(s[j].password, temp_password1);
+        strcpy(s[j].email, temp_email);
+        strcpy(s[j].mobile, temp_mobile);
+        j++;
+        printf("\n\n\nAccount Successfully Created!!\n\n");
+    }
+}
+
